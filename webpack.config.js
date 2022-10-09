@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: './src/index.ts',
@@ -19,8 +20,22 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
-        test: /\.scss$/i,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
+        test: /.(scss|css)$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: "css-loader",
+            options: {
+              sourceMap: true
+            }
+          },
+          {
+            loader: "sass-loader",
+            options: {
+              sourceMap: true
+            }
+          }
+        ],
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
@@ -35,5 +50,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'City Builder',
     }),
+    new MiniCssExtractPlugin({ filename: '[name].[contenthash].css' }),
   ],
 }
