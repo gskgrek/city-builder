@@ -1,16 +1,8 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const config = {
+module.exports = {
   entry: './src/index.js',
-  devServer: {
-    static: './dist',
-    port: 3000,
-    compress: true,
-    client: {
-      progress: true,
-    },
-  },
   plugins: [
     new HtmlWebpackPlugin({
       title: 'City Builder',
@@ -37,6 +29,7 @@ const config = {
     ],
   },
   optimization: {
+    usedExports: true,
     moduleIds: 'deterministic',
     runtimeChunk: 'single',
     splitChunks: {
@@ -50,9 +43,3 @@ const config = {
     },
   },
 }
-
-if (process.env.NODE_ENV === 'development') {
-  config.devtool = 'eval-cheap-module-source-map'
-}
-
-module.exports = config
