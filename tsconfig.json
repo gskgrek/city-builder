@@ -1,0 +1,25 @@
+{
+  "include": [
+    "src/**/*",
+    "custom.d.ts"
+  ],
+  "compilerOptions": {
+    // Types should go into this directory.
+    // Removing this would place the .d.ts files
+    // next to the .js files
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "module": "es6",
+    "target": "es5",
+    "allowJs": true,
+    "moduleResolution": "node",
+    // Generate d.ts files
+    "declaration": true,
+    // go to js file when using IDE functions like
+    // "Go to Definition" in VSCode
+    "declarationMap": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop" : true
+  }
+}

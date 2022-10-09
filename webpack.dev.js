@@ -12,4 +12,7 @@ module.exports = merge(common, {
       progress: true,
     },
   },
+  optimization: {
+    minimize: false
+  }
 });
