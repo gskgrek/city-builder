@@ -4,7 +4,7 @@ import Logo from './assets/images/logo.png'
 function component() {
   const element = document.createElement('div')
 
-  element.innerHTML = 'Hello World'
+  element.innerHTML = 'Hello world'
   element.classList.add('hello')
 
   const logo = new Image()
