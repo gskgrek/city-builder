@@ -17,7 +17,7 @@ module.exports = {
       "eslint:recommended",
       "plugin:@typescript-eslint/recommended",
       "plugin:import/recommended",
-      "prettier/@typescript-eslint",
+      "prettier",
       "plugin:prettier/recommended"
   ],
   rules: {
