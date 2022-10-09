@@ -61,3 +61,6 @@ yarn-error.log
 /.idea
 **/.idea
 .editorconfig
+
+#project specific
+dist/
