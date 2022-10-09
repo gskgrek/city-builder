@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
+  devtool: 'eval-source-map',
   plugins: [
     new HtmlWebpackPlugin({
       title: 'City Builder',
