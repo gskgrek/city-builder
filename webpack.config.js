@@ -1,9 +1,8 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-module.exports = {
+const config = {
   entry: './src/index.js',
-  devtool: 'eval-source-map',
   devServer: {
     static: './dist',
     port: 3000,
@@ -37,4 +36,10 @@ module.exports = {
       },
     ],
   },
-};
+}
+
+if (process.env.NODE_ENV === 'development') {
+  config.devtool = 'eval-source-map'
+}
+
+module.exports = config
