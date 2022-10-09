@@ -17,7 +17,7 @@ const config = {
     }),
   ],
   output: {
-    filename: '[name].bundle.js',
+    filename: '[name].[contenthash].js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
   },
@@ -37,14 +37,22 @@ const config = {
     ],
   },
   optimization: {
+    moduleIds: 'deterministic',
+    runtimeChunk: 'single',
     splitChunks: {
-      chunks: 'all',
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all',
+        },
+      },
     },
   },
 }
 
 if (process.env.NODE_ENV === 'development') {
-  config.devtool = 'eval-source-map'
+  config.devtool = 'eval-cheap-module-source-map'
 }
 
 module.exports = config
