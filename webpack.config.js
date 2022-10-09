@@ -4,6 +4,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   entry: './src/index.js',
   devtool: 'eval-source-map',
+  devServer: {
+    static: './dist',
+    port: 3000,
+    compress: true,
+    client: {
+      progress: true,
+    },
+  },
   plugins: [
     new HtmlWebpackPlugin({
       title: 'City Builder',
@@ -13,6 +21,9 @@ module.exports = {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
+  },
+  optimization: {
+    runtimeChunk: 'single',
   },
   module: {
     rules: [
