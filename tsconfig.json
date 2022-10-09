@@ -33,7 +33,8 @@
     "declarationMap": true,
     "baseUrl": "./",
     "paths": {
-      "root/*": ["src/*"]
+      "root/*": ["src/*"],
+      "assets/*": ["src/assets/*"]
     }
   }
 }

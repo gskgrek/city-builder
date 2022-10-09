@@ -1,5 +1,5 @@
 import './index.scss'
-import Logo from './assets/images/logo.png'
+import Logo from 'assets/images/logo.png'
 
 function component() {
   const element = document.createElement('div')

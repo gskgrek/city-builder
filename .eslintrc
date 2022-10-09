@@ -23,5 +23,10 @@
   "rules": {
     "import/no-named-as-default": 0,
     "import/prefer-default-export": "off"
+  },
+  "settings": {
+    "import/resolver": {
+      "babel-module": {}
+    }
   }
 }
