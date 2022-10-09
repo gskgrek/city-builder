@@ -36,6 +36,11 @@ const config = {
       },
     ],
   },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+    },
+  },
 }
 
 if (process.env.NODE_ENV === 'development') {
