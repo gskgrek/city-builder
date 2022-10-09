@@ -3,23 +3,37 @@
     "src/**/*",
     "custom.d.ts"
   ],
+  "exclude": [
+    "node_modules",
+    "babel.config.js",
+    "jest.config.js"
+  ],
   "compilerOptions": {
+    "strict": true,
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop" : true,
+    "isolatedModules": true,
+    "resolveJsonModule": true,
+    "noEmit": false,
+    "target": "ESNext",
+    "noImplicitAny": true,
+    "skipLibCheck": true,
     // Types should go into this directory.
     // Removing this would place the .d.ts files
     // next to the .js files
     "outDir": "./dist/",
     "sourceMap": true,
-    "noImplicitAny": true,
-    "module": "es6",
-    "target": "es5",
-    "allowJs": true,
+    "module": "ESNext",
     "moduleResolution": "node",
     // Generate d.ts files
     "declaration": true,
     // go to js file when using IDE functions like
     // "Go to Definition" in VSCode
     "declarationMap": true,
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop" : true
+    "baseUrl": "./",
+    "paths": {
+      "root/*": ["src/*"]
+    }
   }
 }

@@ -1,18 +1,18 @@
-import "./index.scss";
-import Logo from "./assets/images/logo.png";
+import './index.scss'
+import Logo from './assets/images/logo.png'
 
 function component() {
-  const element = document.createElement("div");
+  const element = document.createElement('div')
 
-  element.innerHTML = "Hello World";
-  element.classList.add("hello");
+  element.innerHTML = 'Hello World'
+  element.classList.add('hello')
 
-  const logo = new Image();
-  logo.src = Logo;
+  const logo = new Image()
+  logo.src = Logo
 
-  element.appendChild(logo);
+  element.appendChild(logo)
 
-  return element;
+  return element
 }
 
-document.body.appendChild(component());
+document.body.appendChild(component())
